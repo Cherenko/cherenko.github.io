@@ -1,189 +1,305 @@
-/* Reset some default styles */
-body, h1, h2, h3, h4, h5, h6, p, ul, li {
-	margin: 0;
-	padding: 0;
-}
-p {
-	display: block;
+/* Windows 95 Theme Variables */
+:root {
+  --win95-gray: #c0c0c0;
+  --win95-dark-gray: #808080;
+  --win95-light-gray: #dfdfdf;
+  --win95-blue: #008080;
+  --win95-dark-blue: #000080;
+  --win95-white: #ffffff;
+  --win95-black: #000000;
 }
 
-/* Set a base font size and family */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-	font-family: helvetica, sans-serif;
-	font-size: 18px;
-	line-height: 1.6;
-	color: #333;
+  font-family: "MS Sans Serif", sans-serif;
+  font-size: 11px;
+  background: var(--win95-blue);
+  overflow: hidden;
+  height: 100vh;
+  /* background-image: url('https://i.imgur.com/5bh6eLS.png'); If you want url based wallpaper*/
+  background-image: url("assets/linux1.jpg"); /* Local wallpaper */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Header styles #333*/
-header {
-	background-color: #003635;
-	color: #fff;
-	padding: 20px;
-	text-align: center;
+/* Desktop Area */
+.desktop {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 40px);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 80px);
+  grid-gap: 20px;
+  align-content: start;
 }
 
-header h1 {
-	margin: 0;
+/* Desktop Icons */
+.desktop-icon {
+  width: 64px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 2px;
+  transition: background-color 0.1s;
 }
 
-header nav ul {
-	list-style: none;
-	margin: 10px 0;
+.desktop-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-header nav ul li {
-	display: inline-block;
-	margin-right: 10px;
+.desktop-icon.selected {
+  background-color: var(--win95-dark-blue);
+  color: white;
 }
 
-header nav ul li a {
-	color: #ffff;
-	text-decoration: none;
+.icon-image {
+  width: 32px;
+  height: 32px;
+  background: var(--win95-gray);
+  border: 2px outset var(--win95-gray);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
 }
 
-header nav ul li a:hover{
-	color: #00E300;
+.icon-label {
+  font-size: 10px;
+  font-weight: bold; /* Bold text for better visibility  */
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  word-wrap: break-word;
+  max-width: 60px;
 }
 
-/* Main section styles */
-section {
-	padding: 40px;
+/* Window Styles */
+.window {
+  position: absolute;
+  background: var(--win95-gray);
+  border: 2px outset var(--win95-gray);
+  min-width: 400px;
+  min-height: 300px;
+  display: none;
+  z-index: 10;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-section h2 {
-	margin-bottom: 20px;
+.window.active {
+  z-index: 100;
 }
 
-/* About section styles */
-#about {
-	background-color: #f9f9f9;
+.title-bar {
+  background: var(--win95-blue);
+  color: white;
+  padding: 2px 4px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
 }
 
-/* Projects section styles */
-#projects {
-	background-color: #fff;
+.window.inactive .title-bar {
+  background: var(--win95-dark-gray);
 }
 
-/* Contact section styles */
-#contact {
-	background-color: #f9f9f9;
+.window-controls {
+  display: flex;
+  gap: 2px;
 }
 
-/* Footer styles */
-footer {
-	background-color: #003635;
-	color: #fff;
-	padding: 20px;
-	text-align: center;
-}
-/* ------ New Codes ------*/
-/*---- INDEX INFO ---- */
-#main{
-	display: grid;
-	grid-template-columns: 1fr 6fr 1fr;
-	grid-gap: 10px;
-}
-.profilepic {
-	display: block;
-	height: 16rem;
-	margin-top: 2.5rem;
-	margin-bottom: 2rem;
+.control-button {
+  width: 16px;
+  height: 14px;
+  background: var(--win95-gray);
+  border: 1px outset var(--win95-gray);
+  font-size: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#description{
-	margin-left: auto;
-	margin-right: auto;
-	padding: 20px;
-	margin-top: 35px;
-	border: 3px solid #003635;
+.control-button:active {
+  border: 1px inset var(--win95-gray);
 }
 
-.front-grid {
-	display: grid;
-	grid-template-columns: 1fr 4fr;
-	grid-gap: 10px;
+.window-content {
+  padding: 10px;
+  height: calc(100% - 26px);
+  overflow: auto;
+  background: white;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
-.resume {
-	border: 3px solid #003635;
-	padding: 3px;
-	text-decoration: none;
-	color: white;
-	transition: 0.3s;
-	background-color: #003635;
-}
-a.resume:hover {
-	color: white;
-	font-size: 20px;
-}
-
-
-/*---GRID CONTAINER (Projects) ---*/
-.grid-container {
-	display: grid;
-	grid-template-columns: 1fr 4fr; /* Two columns with equal width */
-	grid-gap: 10px; /* Spacing between grid items */
-	color:  #ffff;
+/* Taskbar */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--win95-gray);
+  border-top: 2px outset var(--win95-gray);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  z-index: 1000;
 }
 
-.item {
-	background-color: #ffff;
-	padding: 20px;
-	text-decoration: none;
-	color: black;
-	border: 3px solid #003635; /*--Check this--*/
+.start-button {
+  background: var(--win95-gray);
+  border: 2px outset var(--win95-gray);
+  padding: 4px 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 4px;
 }
 
-.item_photo {
-	background-color: #ffff;
-	text-decoration: none;
-	border: 3px solid;
+.start-button:active {
+  border: 2px inset var(--win95-gray);
 }
 
-#projects{
-	display: grid;
-	grid-template-columns: 1fr 6fr 1fr;
-	grid-gap: 10px;
+.taskbar-items {
+  flex: 1;
+  display: flex;
+  gap: 2px;
 }
 
-.proj_title{
-	margin-bottom: 0.5rem;
-	font-weight: bold;
-	align: center;
+.taskbar-item {
+  background: var(--win95-gray);
+  border: 2px inset var(--win95-gray);
+  padding: 4px 8px;
+  font-size: 11px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-.proj_pic{
-	width: 250px;
-	height: 150px;
-	border: 3px solid #003635;
-}
-.checkit{
-	font-style: italic;
-	color: #003635;
-	text-decoration: none;
-	transition: 0.3s;
+.taskbar-item.active {
+  border: 2px inset var(--win95-gray);
+  background: var(--win95-dark-gray);
 }
 
-a.checkit:hover {
-	font-size: 1.2em;
-	color: #003635;
+.clock {
+  background: var(--win95-gray);
+  border: 1px inset var(--win95-gray);
+  padding: 4px 8px;
+  font-size: 11px;
+  min-width: 80px;
+  text-align: center;
 }
 
-/*---Additional Scripts (JS or Bootstrap) --*/
-.card_grid{
-	align: center;
+/* Disclaimer */
+.disclaimer {
+  position: fixed;
+  bottom: 42px;
+  right: 10px;
+  color: white;
+  font-size: 10px;
+  text-shadow: 1px 1px 1px black;
+  z-index: 5;
 }
-.card{
-	text-align: center;
-	border: 3px solid #003635;
+
+/* Animations */
+@keyframes windowOpen {
+  from {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
-.btn{
-	margin-top: 4px;
-	background-color: #003635;
-	transition: 0.3s;
+
+@keyframes windowClose {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.1);
+    opacity: 0;
+  }
 }
-a.btn:hover{
-	background-color: #003635;
-	font-size: 1.2em;
+
+@keyframes windowMinimize {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.window.opening {
+  animation: windowOpen 0.2s ease-out forwards;
+}
+
+.window.closing {
+  animation: windowClose 0.2s ease-in forwards;
+}
+
+.window.minimizing {
+  animation: windowMinimize 0.3s ease-in forwards;
+}
+
+/* Start Menu */
+.start-menu {
+  position: fixed;
+  bottom: 40px;
+  left: 2px;
+  width: 200px;
+  background: var(--win95-gray);
+  border: 2px outset var(--win95-gray);
+  display: none;
+  z-index: 1001;
+}
+
+.start-menu-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--win95-dark-gray);
+}
+
+.start-menu-item:hover {
+  background: var(--win95-blue);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .desktop {
+    grid-template-columns: repeat(auto-fit, 60px);
+    grid-gap: 15px;
+  }
+
+  .desktop-icon {
+    width: 60px;
+    height: 70px;
+  }
+
+  .window {
+    min-width: 300px;
+    min-height: 250px;
+  }
 }

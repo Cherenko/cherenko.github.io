@@ -1,104 +1,290 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐧 I.K. Guillermo - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="desktop" id="desktop">
+      <!-- Desktop Icons - Easy to add more icons here -->
+      <div class="desktop-icon" data-window="about-me">
+        <div class="icon-image">🗿</div>
+        <div class="icon-label">About Me</div>
+      </div>
 
-<html lang="en" style="caret-color: transparent;">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <link href="styles.css" rel="stylesheet">
-        <title>I.K. Guillermo</title>
-    </head>
-    <body>
-        <header>
-            <div class="header-title">
-            <h1>I.K. Guillermo</h1>
-            <h6><i>Licensed ECT & Web Developer</i></h6>
-            <p></p>
-            <nav>
-                <ul>
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="support.html">Support</a></li>
-                    <!---<li><a href="shop.html">Shop</a></li> "This Code is unavailable for now"-->
-                </ul>
-            </nav>
+      <div class="desktop-icon" data-window="projects">
+        <div class="icon-image">🗃️</div>
+        <div class="icon-label">Projects</div>
+      </div>
+
+      <div class="desktop-icon" data-window="tech-stack">
+        <div class="icon-image">📚</div>
+        <div class="icon-label">Tech Stack</div>
+      </div>
+
+      <div class="desktop-icon" data-window="music-player">
+        <div class="icon-image">🎶</div>
+        <div class="icon-label">Music Player</div>
+      </div>
+
+      <div class="desktop-icon" data-window="contact">
+        <div class="icon-image">📧</div>
+        <div class="icon-label">Contact Me</div>
+      </div>
+    </div>
+
+    <!-- #WINDOWS - Add new windows here# -->
+    <!-- About Me Window -->
+    <div class="window" id="about-me" style="top: 50px; left: 100px">
+      <div class="title-bar">
+        <span>🗿 About Me</span>
+        <div class="window-controls">
+          <div class="control-button minimize-btn">_</div>
+          <div class="control-button close-btn">×</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <!-- Edit your about me content here -->
+        <div style="display: flex; gap: 15px; align-items: flex-start;">
+            <!-- Profile Picture Section -->
+            <div style="flex-shrink: 0;">
+                <div style="width: 120px; height: 120px; border: 2px inset #c0c0c0; background: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <!-- Replace 'profile.jpg' with your actual image filename -->
+                    <img src="sets/profile.jpg" alt="Ian's Profile" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback if image doesn't load -->
+                    <div style="display: none; font-size: 48px; color: #808080;">👤</div>
+                </div>
             </div>
-        </header>
-        <!--- Main Content Of HTML-->
-        <main id="main">
-            <div class="dvd"></div>
-            <div class="dvd">
-        <!---Add your about me info here.-->
-            <section id="about">
-                <h2><b>About Me</b></h2>
-                <div class="front-grid">
-                    <div>
-                        <figure>
-                        <a><img class="profilepic" src="https://i.postimg.cc/KvSnPYnG/1.jpg" alt="I.K. Guillermo"></a>
-                        </figure>
-                    </div>
-                    <div>
-                        <p id="description"><b>
-                        Hi there! I'm an experienced electronics engineer, versatile programmer, and creative video editor. With a passion for innovation and creativity,
-                        I excel in designing practical electronic systems, developing efficient software and web solutions, and crafting captivating visual content.
-                        My ability to solve complex challenges and deliver exceptional results makes me a valuable asset for any project.
-                        Let's collaborate and bring your ideas to life!
-                        </b></p>
-                    </div>
-                </div>
-            </section>
-        <!--- Highlight-->
-            <section>
-                <h2><b>Highlights</b></h2>
-                <div class="d-flex justify-content-center">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://i.postimg.cc/yNW0nfW3/a2.gif" class="card-img-top" alt="Image Alt Text">
-                        <div class="card-body">
-                            <h5 class="card-title">Kamikaze Robot</h5>
-                            <p class="card-text">Created a robot as a fun little project back in college, I don't know why I strapped an explosive device to a robot.</p>
-                            <a href="https://www.youtube.com/watch?v=IjlFY4_72Ng&ab_channel=CynoTechTV" target="_blank" class="btn btn-primary">Check it out</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        <!--- Put Resume Here -->
-            <section>
-                <h2><b>My Resume</b></h2>
-                <div>
-                    <p style="text-align: center;"><a class="resume" href="https://drive.google.com/file/d/1LgFZwiLO5rWfUyd-OpilXyLVzz3IlqN_/view?usp=sharing" target="_blank" ><b>Check it Here</b></a></p>
-                </div>
-            </section>
-        <!---Put Soundcloud Music here.-->
-            <section>
-                <h2><b>My Jam</b></h2>
-                <p style="margin-bottom: 20px;">I love listening to music of different genres, I found myself weirded out that I don't stick to just few genres but listens to whatever fits my mood.
-                    Call me old fashion but, I listen to R&B, metal, rap, country, orchestra, blue, yellow, pink.. whatever just keep bringing me that.</p>
-        <!---Track 1-->
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/15716401&color=%23225d48&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-                </iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                    <a href="https://soundcloud.com/joeldulog2011" title="joel-dulog" target="_blank" style="color: #cccccc; text-decoration: none;">joel-dulog</a>
-                    · <a href="https://soundcloud.com/joeldulog2011/cueshe-walang-yamang-mas" title="Cueshe - Walang Yamang Mas Hihigit Sayo" target="_blank" style="color: #cccccc; text-decoration: none;">Cueshe - Walang Yamang Mas Hihigit Sayo</a>
-                </div>
-        <!---Track 2-->
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209515669&color=%23225d48&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-                </iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                    <a href="https://soundcloud.com/zooitalianoproducer" title="Zoo Italiano" target="_blank" style="color: #cccccc; text-decoration: none;">Zoo Italiano</a>
-                    · <a href="https://soundcloud.com/zooitalianoproducer/x-zibit-paparazzi-alpino-13-bootleg" title="Xzibit - Paparazzi ( Alpino 13 Bootleg )" target="_blank" style="color: #cccccc; text-decoration: none;">Xzibit - Paparazzi ( Alpino 13 Bootleg )</a>
-                </div>
-            </section>
-        <!-- Add your contact form or contact information here -->
-            <section id="contact">
-                <h2><b>Contact Me</b></h2>
-                <p><b>E-mail: </b>ikgmanagement14@gmail.com</p>
-                <p><b>Linkedin: </b><a class="resume" href="https://ph.linkedin.com/in/ian-kirby-guillermo-72671a205?" target="_blank">I.K. Guillermo</a></p>
-            </section>
-        </main>
-        <!---End of Main Element-->
-        <!-- footer -->
-        <footer>
-            <p>&copy; 2023 I.K. Guillermo. All rights reserved.</p>
-        </footer>
-    </body>
-</html>
+        <!-- Text Content Section -->
+            <div style="flex: 1;">
+                <h2>Hello! I'm Ian</h2>
+                <p>I help businesses automate the boring stuff. My toolkit includes Python, Google Workspace workflows, IoT,</br>
+                    and a knack for connecting tools that don’t want to talk to each other — perfect for remote-first teams that value efficiency.</p>
+                <br>
+                <p><strong>Background:</strong></p>
+                <p>Started as an Engineer got into IT Administration and got frustrated with repetitive work, and taught myself to automate my job. </br>
+                    Now I build scalable automations and IoT projects that make businesses more efficient.</p>
+            </div>
+        </div>
+        <br />
+        <p><strong>Interests:</strong></p>
+        <ul>
+          <li>Retro computing and design</li>
+          <li>Modern web technologies</li>
+          <li>User experience design</li>
+          <li>Creative coding projects</li>
+        </ul>
+        <br />
+        <p>
+          Feel free to explore my projects and get in touch if you'd like to
+          collaborate!
+        </p>
+      </div>
+    </div>
 
+    <!-- Projects Window -->
+    <div class="window" id="projects" style="top: 80px; left: 150px">
+      <div class="title-bar">
+        <span>🗃️ My Projects</span>
+        <div class="window-controls">
+          <div class="control-button minimize-btn">_</div>
+          <div class="control-button close-btn">×</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <!-- Edit your projects content here -->
+        <h2>Featured Projects</h2>
+        <br />
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 15px">
+          <h3>🎮 Retro Portfolio Website</h3>
+          <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+          <p>
+            A Windows 95-inspired portfolio website with authentic animations
+            and interactions. Features draggable windows, taskbar functionality,
+            and nostalgic design elements.
+          </p>
+        </div>
+
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 15px">
+          <h3>Mattermost Onboarding ETL</h3>
+          <p><strong>Technologies:</strong> Python, N8N, Selenium, GSheets</p>
+          <p>
+            Automated onboarding process for Mattermost users, integrating data
+            from various sources and streamlining user setup using Python and N8N for workflow.
+          </p>
+        </div>
+
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 15px">
+          <h3>🔧 QR Attendance Traker using OpenCV</h3>
+          <p><strong>Technologies:</strong> Python, OpneCV, Tkinter</p>
+          <p>
+            Built a QR code-based attendance system using OpenCV for real-time scanning
+            and Tkinter for the user interface. Simplifies attendance tracking for company events and participation.
+          </p>
+        </div>
+
+        <p>
+          <em
+            >More projects coming soon... Check my GitHub for the latest
+            updates!</em
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Tech Stack Window -->
+    <div class="window" id="tech-stack" style="top: 110px; left: 200px">
+      <div class="title-bar">
+        <span>📚 Tech Stack</span>
+        <div class="window-controls">
+          <div class="control-button minimize-btn">_</div>
+          <div class="control-button close-btn">×</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <!-- Edit your tech stack content here -->
+        <h2>Technologies & Skills</h2>
+        <br />
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px">
+          <div>
+            <h3>📜 Programming</h3></br>
+            <ul>
+              <img src="https://img.shields.io/badge/python-002966?style=for-the-badge&logo=python&logoColor=ffcc00" /><br>
+              <img src="https://img.shields.io/badge/Postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" /></br>
+              <img src="https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" /><br>
+              <img src="https://img.shields.io/badge/css3-%231572BA.svg?&style=for-the-badge&logo=css&logoColor=white" /><br>
+              <img src="https://img.shields.io/badge/c-%238600b3.svg?style=for-the-badge&logo=c&logoColor=white" /></br>
+            </ul>
+          </div>
+
+          <div>
+            <h3>⚡ Frameworks</h3></br>
+            <ul>
+              <img src="https://custom-icon-badges.demolab.com/badge/Playwright-%2325A768.svg?style=for-the-badge&logo=playwright&logoColor=white"></br>
+              <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=fff" /></br>
+              <img src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white"></br>
+            </ul>
+          </div>
+
+          <div>
+            <h3>🧙‍♂️ Environments</h3></br>
+            <ul>
+               <img src="https://img.shields.io/badge/windows-%230078D6.svg?&style=for-the-badge&logo=windows&logoColor=white" /></br>
+               <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"></br>
+               <img src="https://img.shields.io/badge/google%20cloud-%234285F4.svg?&style=for-the-badge&logo=google%20cloud&logoColor=white" /></br>
+               <img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=Raspberry%20Pi&logoColor=white"></br>
+               <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white"></br>
+               <img src="https://img.shields.io/badge/kyocera-%23DF0522.svg?&style=for-the-badge&logo=kyocera&logoColor=white"></br>
+               <img src="https://img.shields.io/badge/-Proteus-02303A?style=for-the-badge&logo=Proteus&logoColor=white"></br>
+            </ul>
+          </div>
+
+          <div>
+            <h3>🛠️ Toolset & Others</h3></br>
+            <ul>
+                <img src="https://img.shields.io/badge/Asset%20Tiger-%23ED8B0B.svg?style=for-the-badge&logo=timescale&logoColor=black" /></br>
+                <img src="https://custom-icon-badges.demolab.com/badge/VS%20Code-0078d7.svg?style=for-the-badge&logo=vsc&logoColor=white" /></br>
+                <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" /></br>
+                <img src="https://img.shields.io/badge/sheets-%2334A853.svg?&style=for-the-badge&logo=google%20sheets&logoColor=white" /></br>
+                <img src="https://img.shields.io/badge/claude-%230a0f0f.svg?style=for-the-badge&logo=claude&logoColor=ff751a"></br>
+                <img src="https://img.shields.io/badge/Asana-F06A6A?style=for-the-badge&logo=asana&logoColor=fff" /></br>
+                <img src="https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF" /></br>
+                <img src="https://img.shields.io/badge/n8n-00001a?style=for-the-badge&logo=n8n&logoColor=ff0066" /></br>
+                <img src="https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white" /></br>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Music Player Window -->
+    <div
+      class="window"
+      id="music-player"
+      style="top: 170px; left: 300px; width: 400px; height: 250px"
+    >
+      <div class="title-bar">
+        <span>🎶 Music Player</span>
+        <div class="window-controls">
+          <div class="control-button minimize-btn">_</div>
+          <div class="control-button close-btn">×</div>
+        </div>
+      </div>
+      <div class="window-content" style="padding: 5px">
+        <!-- Replace YOUR_SOUNDCLOUD_URL with your actual SoundCloud track URL -->
+        <iframe
+          width="100%"
+          height="166"
+          scrolling="no"
+          frameborder="no"
+          src="https://w.soundcloud.com/player/?url=https://on.soundcloud.com/DQvHTFXrQy8vm0UNXD&color=008080&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+        >
+        </iframe>
+        <div style="margin-top: 5px; font-size: 10px; color: #666">
+          Windows 95 Style Music Player
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Window -->
+    <div class="window" id="contact" style="top: 140px; left: 250px">
+      <div class="title-bar">
+        <span>📧 Contact Me</span>
+        <div class="window-controls">
+          <div class="control-button minimize-btn">_</div>
+          <div class="control-button close-btn">×</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <!-- Edit your contact content here -->
+        <h2>Get In Touch</h2>
+        <br />
+        <p>
+          I'd love to hear from you! Whether you have a project in mind, want to
+          collaborate, or just want to say hello.
+        </p>
+        <br />
+        <div
+          style="border: 2px inset #c0c0c0; padding: 15px; background: #f0f0f0"
+        >
+          <p><strong>📧 Email:</strong> ikgmanagement14@email.com</p>
+          <p><strong>💼 LinkedIn:</strong> linkedin.com/in/ikguillermo</p>
+          <p><strong>🐱 GitHub:</strong> github.com/Cherenko</p>
+        </div>
+        <br />
+        <p><strong>Available for:</strong></p>
+        <ul>
+          <li>Freelance projects</li>
+          <li>Full-time opportunities</li>
+          <li>Collaboration on open source</li>
+          <li>Speaking at events</li>
+          <li>Technical consulting</li>
+        </ul>
+        <br />
+        <p><em>Response time: Usually within 24 hours</em></p>
+      </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+      <div class="start-button" id="start-button">🪟 Start</div>
+      <div class="taskbar-items" id="taskbar-items"></div>
+      <div class="clock" id="clock"></div>
+    </div>
+
+    <!-- Start Menu -->
+    <div class="start-menu" id="start-menu">
+      <div class="start-menu-item" onclick="changeWallpaper()">
+        Change Wallpaper
+      </div>
+      <div class="start-menu-item" onclick="showAbout()">About Windows 95</div>
+      <div class="start-menu-item" onclick="closeAllWindows()">Close All</div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">© I.K. Guillermo All rights reserved</div>
+    <script src="script.js"></script>
+  </body>
+</html>
